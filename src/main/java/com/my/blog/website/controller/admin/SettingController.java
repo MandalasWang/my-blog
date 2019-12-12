@@ -47,7 +47,7 @@ public class SettingController extends BaseController {
     @GetMapping(value = "")
     public String setting(HttpServletRequest request) {
         List<OptionVo> voList = optionService.getOptions();
-        Map<String, String> options = new HashMap<>();
+        Map<String, String> options = new HashMap<>(16);
         voList.forEach((option) -> {
             options.put(option.getName(), option.getValue());
         });
@@ -64,7 +64,7 @@ public class SettingController extends BaseController {
     public RestResponseBo saveSetting(@RequestParam(required = false) String site_theme, HttpServletRequest request) {
         try {
             Map<String, String[]> parameterMap = request.getParameterMap();
-            Map<String, String> querys = new HashMap<>();
+            Map<String, String> querys = new HashMap<>(16);
             parameterMap.forEach((key, value) -> {
                 querys.put(key, join(value));
             });

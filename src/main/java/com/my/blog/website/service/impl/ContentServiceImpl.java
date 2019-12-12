@@ -201,10 +201,10 @@ public class ContentServiceImpl implements IContentService {
         if (StringUtils.isBlank(contents.getContent())) {
             throw new TipException("文章内容不能为空");
         }
-        if (contents.getTitle().length() > 200) {
+        if (contents.getTitle().length() > WebConst.MAX_TITLE_COUNT) {
             throw new TipException("文章标题过长");
         }
-        if (contents.getContent().length() > 65000) {
+        if (contents.getContent().length() > WebConst.MAX_CONTENT_SIZE) {
             throw new TipException("文章内容过长");
         }
         if (null == contents.getAuthorId()) {

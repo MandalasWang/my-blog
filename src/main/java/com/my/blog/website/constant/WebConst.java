@@ -71,7 +71,10 @@ public class WebConst {
      * 上传文件最大1M
      */
     public static Integer MAX_FILE_SIZE = 1048576;
-
+    /**
+     * 文章内容最大字数
+     */
+    public static final int MAX_CONTENT_SIZE=65000;
     /**
      * 要过滤的ip列表
      */

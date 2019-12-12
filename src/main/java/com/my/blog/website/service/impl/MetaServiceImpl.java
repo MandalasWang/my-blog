@@ -71,7 +71,7 @@ public class MetaServiceImpl implements IMetaService {
             if (limit < 1 || limit > WebConst.MAX_POSTS) {
                 limit = 10;
             }
-            Map<String, Object> paraMap = new HashMap<>();
+            Map<String, Object> paraMap = new HashMap<>(16);
             paraMap.put("type", type);
             paraMap.put("order", orderby);
             paraMap.put("limit", limit);

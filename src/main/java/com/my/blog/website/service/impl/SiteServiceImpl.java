@@ -83,7 +83,7 @@ public class SiteServiceImpl implements ISiteService {
     @Override
     public BackResponseBo backup(String bk_type, String bk_path, String fmt) throws Exception {
         BackResponseBo backResponse = new BackResponseBo();
-        if (bk_type.equals("attach")) {
+        if ("attach".equals(bk_type)) {
             if (StringUtils.isBlank(bk_path)) {
                 throw new TipException("请输入备份文件存储路径");
             }
@@ -104,7 +104,7 @@ public class SiteServiceImpl implements ISiteService {
             backResponse.setAttachPath(attachPath);
             backResponse.setThemePath(themesPath);
         }
-        if (bk_type.equals("db")) {
+        if ("db".equals(bk_type)) {
 
             String bkAttachDir = AttachController.CLASSPATH + "upload/";
             if (!(new File(bkAttachDir)).isDirectory()) {
@@ -210,7 +210,7 @@ public class SiteServiceImpl implements ISiteService {
             if(limit < 1 || limit > WebConst.MAX_POSTS){
                 limit = 10;
             }
-            Map<String, Object> paraMap = new HashMap<>();
+            Map<String, Object> paraMap = new HashMap<>(16);
             paraMap.put("type", type);
             paraMap.put("order", orderBy);
             paraMap.put("limit", limit);
