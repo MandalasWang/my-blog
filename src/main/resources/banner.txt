@@ -1,31 +1,18 @@
 ${AnsiColor.BRIGHT_YELLOW}
 
-                                                                bbbbbbbb
-                                                                b::::::b            lllllll
-                                                                b::::::b            l:::::l
-                                                                b::::::b            l:::::l
-                                                                 b:::::b            l:::::l
-   mmmmmmm    mmmmmmm yyyyyyy           yyyyyyy                  b:::::bbbbbbbbb     l::::l    ooooooooooo      ggggggggg   ggggg
- mm:::::::m  m:::::::mmy:::::y         y:::::y                   b::::::::::::::bb   l::::l  oo:::::::::::oo   g:::::::::ggg::::g
-m::::::::::mm::::::::::my:::::y       y:::::y                    b::::::::::::::::b  l::::l o:::::::::::::::o g:::::::::::::::::g
-m::::::::::::::::::::::m y:::::y     y:::::y    ---------------  b:::::bbbbb:::::::b l::::l o:::::ooooo:::::og::::::ggggg::::::gg
-m:::::mmm::::::mmm:::::m  y:::::y   y:::::y     -:::::::::::::-  b:::::b    b::::::b l::::l o::::o     o::::og:::::g     g:::::g
-m::::m   m::::m   m::::m   y:::::y y:::::y      ---------------  b:::::b     b:::::b l::::l o::::o     o::::og:::::g     g:::::g
-m::::m   m::::m   m::::m    y:::::y:::::y                        b:::::b     b:::::b l::::l o::::o     o::::og:::::g     g:::::g
-m::::m   m::::m   m::::m     y:::::::::y                         b:::::b     b:::::b l::::l o::::o     o::::og::::::g    g:::::g
-m::::m   m::::m   m::::m      y:::::::y                          b:::::bbbbbb::::::bl::::::lo:::::ooooo:::::og:::::::ggggg:::::g
-m::::m   m::::m   m::::m       y:::::y                           b::::::::::::::::b l::::::lo:::::::::::::::o g::::::::::::::::g
-m::::m   m::::m   m::::m      y:::::y                            b:::::::::::::::b  l::::::l oo:::::::::::oo   gg::::::::::::::g
-mmmmmm   mmmmmm   mmmmmm     y:::::y                             bbbbbbbbbbbbbbbb   llllllll   ooooooooooo       gggggggg::::::g
-                            y:::::y                                                                                      g:::::g
-                           y:::::y                                                                           gggggg      g:::::g
-                          y:::::y                                                                            g:::::gg   gg:::::g
-                         y:::::y                                                                              g::::::ggg:::::::g
-                        yyyyyyy                                                                                gg:::::::::::::g
-                                                                                                                 ggg::::::ggg
-                                                                                                                    gggggg
+                                 /$$       /$$
+                                | $$      | $$
+ /$$$$$$/$$$$  /$$   /$$        | $$$$$$$ | $$  /$$$$$$   /$$$$$$
+| $$_  $$_  $$| $$  | $$ /$$$$$$| $$__  $$| $$ /$$__  $$ /$$__  $$
+| $$ \ $$ \ $$| $$  | $$|______/| $$  \ $$| $$| $$  \ $$| $$  \ $$
+| $$ | $$ | $$| $$  | $$        | $$  | $$| $$| $$  | $$| $$  | $$
+| $$ | $$ | $$|  $$$$$$$        | $$$$$$$/| $$|  $$$$$$/|  $$$$$$$
+|__/ |__/ |__/ \____  $$        |_______/ |__/ \______/  \____  $$
+               /$$  | $$                                 /$$  \ $$
+              |  $$$$$$/                                |  $$$$$$/
+               \______/                                  \______/
 
-${AnsiColor.BLACK}
+${AnsiColor.BRIGHT_GREEN}
 Project Version: V1.0
 Application Version: ${application.version}${application.formatted-version}
 Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
