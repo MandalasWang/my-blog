@@ -1,29 +1,31 @@
-${AnsiColor.BRIGHT_GREEN}
+${AnsiColor.BRIGHT_YELLOW}
 
-bbbbbbbb
-b::::::b            lllllll
-b::::::b            l:::::l
-b::::::b            l:::::l
-b:::::b            l:::::l
-b:::::bbbbbbbbb     l::::l    ooooooooooo      ggggggggg   ggggg
-b::::::::::::::bb   l::::l  oo:::::::::::oo   g:::::::::ggg::::g
-b::::::::::::::::b  l::::l o:::::::::::::::o g:::::::::::::::::g
-b:::::bbbbb:::::::b l::::l o:::::ooooo:::::og::::::ggggg::::::gg
-b:::::b    b::::::b l::::l o::::o     o::::og:::::g     g:::::g
-b:::::b     b:::::b l::::l o::::o     o::::og:::::g     g:::::g
-b:::::b     b:::::b l::::l o::::o     o::::og:::::g     g:::::g
-b:::::b     b:::::b l::::l o::::o     o::::og::::::g    g:::::g
-b:::::bbbbbb::::::bl::::::lo:::::ooooo:::::og:::::::ggggg:::::g
-b::::::::::::::::b l::::::lo:::::::::::::::o g::::::::::::::::g
-b:::::::::::::::b  l::::::l oo:::::::::::oo   gg::::::::::::::g
-bbbbbbbbbbbbbbbb   llllllll   ooooooooooo       gggggggg::::::g
-                                                        g:::::g
-                                            gggggg      g:::::g
-                                            g:::::gg   gg:::::g
-                                            g::::::ggg:::::::g
-                                            gg:::::::::::::g
-                                              ggg::::::ggg
-                                                 gggggg
+                                                                bbbbbbbb
+                                                                b::::::b            lllllll
+                                                                b::::::b            l:::::l
+                                                                b::::::b            l:::::l
+                                                                 b:::::b            l:::::l
+   mmmmmmm    mmmmmmm yyyyyyy           yyyyyyy                  b:::::bbbbbbbbb     l::::l    ooooooooooo      ggggggggg   ggggg
+ mm:::::::m  m:::::::mmy:::::y         y:::::y                   b::::::::::::::bb   l::::l  oo:::::::::::oo   g:::::::::ggg::::g
+m::::::::::mm::::::::::my:::::y       y:::::y                    b::::::::::::::::b  l::::l o:::::::::::::::o g:::::::::::::::::g
+m::::::::::::::::::::::m y:::::y     y:::::y    ---------------  b:::::bbbbb:::::::b l::::l o:::::ooooo:::::og::::::ggggg::::::gg
+m:::::mmm::::::mmm:::::m  y:::::y   y:::::y     -:::::::::::::-  b:::::b    b::::::b l::::l o::::o     o::::og:::::g     g:::::g
+m::::m   m::::m   m::::m   y:::::y y:::::y      ---------------  b:::::b     b:::::b l::::l o::::o     o::::og:::::g     g:::::g
+m::::m   m::::m   m::::m    y:::::y:::::y                        b:::::b     b:::::b l::::l o::::o     o::::og:::::g     g:::::g
+m::::m   m::::m   m::::m     y:::::::::y                         b:::::b     b:::::b l::::l o::::o     o::::og::::::g    g:::::g
+m::::m   m::::m   m::::m      y:::::::y                          b:::::bbbbbb::::::bl::::::lo:::::ooooo:::::og:::::::ggggg:::::g
+m::::m   m::::m   m::::m       y:::::y                           b::::::::::::::::b l::::::lo:::::::::::::::o g::::::::::::::::g
+m::::m   m::::m   m::::m      y:::::y                            b:::::::::::::::b  l::::::l oo:::::::::::oo   gg::::::::::::::g
+mmmmmm   mmmmmm   mmmmmm     y:::::y                             bbbbbbbbbbbbbbbb   llllllll   ooooooooooo       gggggggg::::::g
+                            y:::::y                                                                                      g:::::g
+                           y:::::y                                                                           gggggg      g:::::g
+                          y:::::y                                                                            g:::::gg   gg:::::g
+                         y:::::y                                                                              g::::::ggg:::::::g
+                        yyyyyyy                                                                                gg:::::::::::::g
+                                                                                                                 ggg::::::ggg
+                                                                                                                    gggggg
+
 ${AnsiColor.BLACK}
+Project Version: V1.0
 Application Version: ${application.version}${application.formatted-version}
 Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
