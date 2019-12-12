@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
  * Created by BlueT on 2017/3/4.
+ * @author
+ * @date 2019/12/12
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {

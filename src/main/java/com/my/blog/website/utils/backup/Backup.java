@@ -11,10 +11,14 @@ import java.sql.Types;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+/**
+ * @author
+ */
 public class Backup {
 	private Connection connection;
 	private TableCollection tables;
 	private boolean addEmptyTable;
+
 	private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyy-MM-dd");
 	private static final DateFormat DATE_TIME_FORMAT = new SimpleDateFormat("yyy-MM-dd hh:mm:ss");
 	private static final DateFormat TIME_FORMAT = new SimpleDateFormat("hh:mm:ss");
@@ -25,7 +29,6 @@ public class Backup {
 	}
 
 	public String execute() throws SQLException {
-
 		StringBuffer sbuf = new StringBuffer();
 
 		DatabaseMetaData metaData = connection.getMetaData();
