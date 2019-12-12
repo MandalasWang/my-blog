@@ -8,7 +8,8 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by BlueT on 2017/3/3.
+ * @author 有缘
+ * @date 2019/12/12
  */
 @Component
 public class WebConst {
@@ -48,11 +49,23 @@ public class WebConst {
      * 文章标题最多可以输入的文字个数
      */
     public static final int MAX_TITLE_COUNT = 200;
+    /**
+     * 文章最大回复字数
+     */
+    public static final int MAX_REPLY_COUNT =2000;
+    /**
+     * 文章最小回复字数
+     */
+    public static final int MIN_REPLY_COUNT = 5;
 
     /**
      * 点击次数超过多少更新到数据库
      */
     public static final int HIT_EXCEED = 10;
+    /**
+     * 允许最大密码输错次数
+     */
+    public static final int MAX_ERRO_COUNT = 3;
 
     /**
      * 上传文件最大1M
