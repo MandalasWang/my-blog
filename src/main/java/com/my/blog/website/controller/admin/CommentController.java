@@ -1,13 +1,14 @@
 package com.my.blog.website.controller.admin;
 
 import com.github.pagehelper.PageInfo;
+import com.my.blog.website.constant.WebConst;
 import com.vdurmont.emoji.EmojiParser;
 import com.my.blog.website.controller.BaseController;
 import com.my.blog.website.exception.TipException;
-import com.my.blog.website.modal.Bo.RestResponseBo;
-import com.my.blog.website.modal.Vo.CommentVo;
-import com.my.blog.website.modal.Vo.CommentVoExample;
-import com.my.blog.website.modal.Vo.UserVo;
+import com.my.blog.website.model.Bo.RestResponseBo;
+import com.my.blog.website.model.Vo.CommentVo;
+import com.my.blog.website.model.Vo.CommentVoExample;
+import com.my.blog.website.model.Vo.UserVo;
 import com.my.blog.website.service.ICommentService;
 import com.my.blog.website.utils.TaleUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -22,6 +23,8 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by 13 on 2017/2/26.
+ * @author wyy
+ *
  */
 @Controller
 @RequestMapping("admin/comments")
@@ -114,7 +117,7 @@ public class CommentController extends BaseController {
             return RestResponseBo.fail("请输入完整后评论");
         }
 
-        if(content.length() > 2000){
+        if(content.length() > WebConst.MAX_REPLY_COUNT){
             return RestResponseBo.fail("请输入2000个字符以内的回复");
         }
         CommentVo c = commentsService.getCommentById(coid);

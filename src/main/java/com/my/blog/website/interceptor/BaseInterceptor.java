@@ -1,6 +1,7 @@
 package com.my.blog.website.interceptor;
 
-import com.my.blog.website.modal.Vo.UserVo;
+import com.my.blog.website.constant.LoginConstant;
+import com.my.blog.website.model.Vo.UserVo;
 import com.my.blog.website.service.IUserService;
 import com.my.blog.website.utils.*;
 import com.my.blog.website.constant.WebConst;
@@ -18,9 +19,12 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 自定义拦截器
  * Created by BlueT on 2017/3/9.
+ * @author wyy
+ * update by wyy 2019/12/12
  */
 @Component
 public class BaseInterceptor implements HandlerInterceptor {
+
     private static final Logger LOGGE = LoggerFactory.getLogger(BaseInterceptor.class);
     private static final String USER_AGENT = "user-agent";
 
@@ -54,12 +58,12 @@ public class BaseInterceptor implements HandlerInterceptor {
                 request.getSession().setAttribute(WebConst.LOGIN_SESSION_KEY, user);
             }
         }
-        if (uri.startsWith("/admin") && !uri.startsWith("/admin/login") && null == user) {
+        if (uri.startsWith(LoginConstant.ADMIN) && !uri.startsWith(LoginConstant.ADMIN_LOGIN) && null == user) {
             response.sendRedirect(request.getContextPath() + "/admin/login");
             return false;
         }
         //设置get请求的token
-        if (request.getMethod().equals("GET")) {
+        if (request.getMethod().equals(LoginConstant.GET)) {
             String csrf_token = UUID.UU64();
             // 默认存储30分钟
             cache.hset(Types.CSRF_TOKEN.getType(), csrf_token, uri, 30 * 60);
@@ -70,7 +74,8 @@ public class BaseInterceptor implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
-        httpServletRequest.setAttribute("commons", commons);//一些工具类和公共方法
+        //一些工具类和公共方法
+        httpServletRequest.setAttribute("commons", commons);
         httpServletRequest.setAttribute("adminCommons", adminCommons);
     }
 

@@ -6,8 +6,8 @@ import com.my.blog.website.constant.WebConst;
 import com.my.blog.website.dao.MetaVoMapper;
 import com.my.blog.website.dto.Types;
 import com.my.blog.website.exception.TipException;
-import com.my.blog.website.modal.Vo.ContentVo;
-import com.my.blog.website.modal.Vo.ContentVoExample;
+import com.my.blog.website.model.Vo.ContentVo;
+import com.my.blog.website.model.Vo.ContentVoExample;
 import com.my.blog.website.service.IContentService;
 import com.my.blog.website.service.IMetaService;
 import com.my.blog.website.service.IRelationshipService;
@@ -69,11 +69,15 @@ public class ContentServiceImpl implements IContentService {
             if (contents.getSlug().length() < 5) {
                 throw new TipException("路径太短了");
             }
-            if (!TaleUtils.isPath(contents.getSlug())) throw new TipException("您输入的路径不合法");
+            if (!TaleUtils.isPath(contents.getSlug())){
+                throw new TipException("您输入的路径不合法");
+            }
             ContentVoExample contentVoExample = new ContentVoExample();
             contentVoExample.createCriteria().andTypeEqualTo(contents.getType()).andStatusEqualTo(contents.getSlug());
             long count = contentDao.countByExample(contentVoExample);
-            if (count > 0) throw new TipException("该路径已经存在，请重新输入");
+            if (count > 0) {
+                throw new TipException("该路径已经存在，请重新输入");
+            }
         } else {
             contents.setSlug(null);
         }

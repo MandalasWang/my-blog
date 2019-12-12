@@ -2,14 +2,15 @@ package com.my.blog.website.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.my.blog.website.constant.WebConst;
 import com.my.blog.website.exception.TipException;
 import com.my.blog.website.utils.DateKit;
 import com.my.blog.website.utils.TaleUtils;
 import com.my.blog.website.dao.CommentVoMapper;
-import com.my.blog.website.modal.Bo.CommentBo;
-import com.my.blog.website.modal.Vo.CommentVo;
-import com.my.blog.website.modal.Vo.CommentVoExample;
-import com.my.blog.website.modal.Vo.ContentVo;
+import com.my.blog.website.model.Bo.CommentBo;
+import com.my.blog.website.model.Vo.CommentVo;
+import com.my.blog.website.model.Vo.CommentVoExample;
+import com.my.blog.website.model.Vo.ContentVo;
 import com.my.blog.website.service.ICommentService;
 import com.my.blog.website.service.IContentService;
 import org.apache.commons.lang3.StringUtils;
@@ -48,7 +49,7 @@ public class CommentServiceImpl implements ICommentService {
         if (StringUtils.isBlank(comments.getContent())) {
             throw new TipException("评论内容不能为空");
         }
-        if (comments.getContent().length() < 5 || comments.getContent().length() > 2000) {
+        if (comments.getContent().length() < WebConst.MIN_REPLY_COUNT || comments.getContent().length() > WebConst.MAX_REPLY_COUNT) {
             throw new TipException("评论字数在5-2000个字符");
         }
         if (null == comments.getCid()) {

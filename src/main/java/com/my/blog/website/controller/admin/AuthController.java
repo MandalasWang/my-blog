@@ -4,8 +4,8 @@ import com.my.blog.website.constant.WebConst;
 import com.my.blog.website.controller.BaseController;
 import com.my.blog.website.dto.LogActions;
 import com.my.blog.website.exception.TipException;
-import com.my.blog.website.modal.Bo.RestResponseBo;
-import com.my.blog.website.modal.Vo.UserVo;
+import com.my.blog.website.model.Bo.RestResponseBo;
+import com.my.blog.website.model.Vo.UserVo;
 import com.my.blog.website.service.ILogService;
 import com.my.blog.website.service.IUserService;
 import com.my.blog.website.utils.Commons;
@@ -27,6 +27,8 @@ import java.io.IOException;
 /**
  * 用户后台登录/登出
  * Created by BlueT on 2017/3/11.
+ * @author wyy
+ * update by wyy 2019/12/12
  */
 @Controller
 @RequestMapping("/admin")
@@ -73,7 +75,7 @@ public class AuthController extends BaseController {
             logService.insertLog(LogActions.LOGIN.getAction(), null, request.getRemoteAddr(), user.getUid());
         } catch (Exception e) {
             error_count = null == error_count ? 1 : error_count + 1;
-            if (error_count > 3) {
+            if (error_count > WebConst.MAX_ERRO_COUNT) {
                 return RestResponseBo.fail("您输入密码已经错误超过3次，请10分钟后尝试");
             }
             cache.set("login_error_count", error_count, 10 * 60);
