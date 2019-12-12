@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
@@ -35,7 +36,7 @@ public class RedisConfig {
      * @return
      */
     @Bean
-    public RedisTemplate<String, Object> redisCacheTemplate(LettuceConnectionFactory redisConnectionFactory) {
+    public RedisTemplate<String, Object> redisCacheTemplate(RedisConnectionFactory redisConnectionFactory) {
         RedisTemplate<String, Object> template = new RedisTemplate<>();
         template.setKeySerializer(new StringRedisSerializer());
         template.setValueSerializer(new GenericJackson2JsonRedisSerializer());
@@ -47,22 +48,22 @@ public class RedisConfig {
      * 自动生成key
      * @return
      */
-    @Bean
-    public KeyGenerator simpleKeyGenerator() {
-        return (o, method, objects) -> {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append(o.getClass().getSimpleName());
-            stringBuilder.append(".");
-            stringBuilder.append(method.getName());
-            stringBuilder.append("[");
-            for (Object obj : objects) {
-                stringBuilder.append(obj.toString());
-            }
-            stringBuilder.append("]");
-
-            return stringBuilder.toString();
-        };
-    }
+//    @Bean
+//    public KeyGenerator simpleKeyGenerator() {
+//        return (o, method, objects) -> {
+//            StringBuilder stringBuilder = new StringBuilder();
+//            stringBuilder.append(o.getClass().getSimpleName());
+//            stringBuilder.append(".");
+//            stringBuilder.append(method.getName());
+//            stringBuilder.append("[");
+//            for (Object obj : objects) {
+//                stringBuilder.append(obj.toString());
+//            }
+//            stringBuilder.append("]");
+//
+//            return stringBuilder.toString();
+//        };
+//    }
 
     /**
      * 自定义缓存管理
