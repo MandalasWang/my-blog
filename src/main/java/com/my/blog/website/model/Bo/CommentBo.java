@@ -1,13 +1,16 @@
 package com.my.blog.website.model.Bo;
 
 import com.my.blog.website.model.Vo.CommentVo;
+import lombok.Data;
 
 import java.util.List;
 
 /**
  * 返回页面的评论，包含父子评论内容
  * Created by 13 on 2017/2/24.
+ * @author wyy
  */
+@Data
 public class CommentBo extends CommentVo {
 
     private int levels;
@@ -27,19 +30,5 @@ public class CommentBo extends CommentVo {
         setCid(comments.getCid());
     }
 
-    public int getLevels() {
-        return levels;
-    }
 
-    public void setLevels(int levels) {
-        this.levels = levels;
-    }
-
-    public List<CommentVo> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<CommentVo> children) {
-        this.children = children;
-    }
 }

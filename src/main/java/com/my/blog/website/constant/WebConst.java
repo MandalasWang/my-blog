@@ -75,6 +75,8 @@ public class WebConst {
      * 文章内容最大字数
      */
     public static final int MAX_CONTENT_SIZE=65000;
+
+    public static final String ADMIN ="admin";
     /**
      * 要过滤的ip列表
      */

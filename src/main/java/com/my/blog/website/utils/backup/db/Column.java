@@ -1,5 +1,9 @@
 package com.my.blog.website.utils.backup.db;
 
+/**
+ * @author wyy
+ * @date 2019/12/12
+ */
 public class Column {
 	private String catalogName;
 	private String schemaName;

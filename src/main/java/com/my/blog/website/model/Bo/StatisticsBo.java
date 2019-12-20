@@ -1,10 +1,14 @@
 package com.my.blog.website.model.Bo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
  * 后台统计对象
+ * @author wyy
  */
+@Data
 public class StatisticsBo implements Serializable {
 
     private Long articles;

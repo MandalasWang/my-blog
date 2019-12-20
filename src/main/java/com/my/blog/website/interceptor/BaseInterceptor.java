@@ -62,6 +62,10 @@ public class BaseInterceptor implements HandlerInterceptor {
             response.sendRedirect(request.getContextPath() + "/admin/login");
             return false;
         }
+//        if(null == user || !WebConst.ADMIN.equals(user.getGroupName())){
+//            response.sendRedirect(request.getContextPath() + "/");
+////            return false;
+//        }
         //设置get请求的token
         if (request.getMethod().equals(LoginConstant.GET)) {
             String csrf_token = UUID.UU64();

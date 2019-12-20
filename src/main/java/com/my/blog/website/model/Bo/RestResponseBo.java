@@ -1,10 +1,13 @@
 package com.my.blog.website.model.Bo;
 
+import lombok.Data;
+
 /**
  * rest返回对象
- *^
+ *^@author wyy
  * @param <T>
  */
+@Data
 public class RestResponseBo<T> {
 
     /**
