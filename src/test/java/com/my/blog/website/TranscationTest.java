@@ -1,7 +1,7 @@
 package com.my.blog.website;
 
 import com.my.blog.website.exception.TipException;
-import com.my.blog.website.modal.Vo.UserVo;
+import com.my.blog.website.model.Vo.UserVo;
 import com.my.blog.website.service.IUserService;
 import com.my.blog.website.service.IOptionService;
 import org.junit.Ignore;
@@ -32,11 +32,11 @@ public class TranscationTest {
     @org.junit.Test
     @Ignore
     public void test() {
-        UserVo user = new UserVo();
-        user.setUsername("wangqiang111");
-        user.setPassword("123456");
-        user.setEmail("8888");
-        userService.insertUser(user);
-        optionService.insertOption("site_keywords", "qwqwq");
+//        UserVo user = new UserVo();
+//        user.setUsername("wangqiang111");
+//        user.setPassword("123456");
+//        user.setEmail("8888");
+//        userService.insertUser(user);
+//        optionService.insertOption("site_keywords", "qwqwq");
     }
 }
