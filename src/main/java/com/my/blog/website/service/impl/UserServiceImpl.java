@@ -1,7 +1,9 @@
 package com.my.blog.website.service.impl;
 
+import com.my.blog.website.dao.RoleMapper;
 import com.my.blog.website.dao.UserVoMapper;
 import com.my.blog.website.exception.TipException;
+import com.my.blog.website.model.Role;
 import com.my.blog.website.model.Vo.UserVo;
 import com.my.blog.website.service.IUserService;
 import com.my.blog.website.utils.TaleUtils;
@@ -9,13 +11,14 @@ import com.my.blog.website.model.Vo.UserVoExample;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Created by BlueT on 2017/3/3.
+ * @author 博渊
  */
 @Service
 public class UserServiceImpl implements IUserService {
@@ -23,6 +26,9 @@ public class UserServiceImpl implements IUserService {
 
     @Resource
     private UserVoMapper userDao;
+
+    @Autowired
+    private RoleMapper roleMapper;
 
     @Override
     public Integer insertUser(UserVo userVo) {
@@ -75,5 +81,14 @@ public class UserServiceImpl implements IUserService {
         if(i!=1){
             throw new TipException("update user by uid and retrun is not one");
         }
+    }
+
+
+    @Override
+    public UserVo getUserInfoByUsername(String username){
+        UserVo users = userDao.findByUsername(username);
+        List<Role> roles = roleMapper.getRoleListByUserId(users.getUid());
+        users.setRoleList(roles);
+        return users;
     }
 }

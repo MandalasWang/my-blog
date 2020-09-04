@@ -109,4 +109,10 @@ public class AuthController extends BaseController {
             LOGGER.error("注销失败", e);
         }
     }
+
+
+    @RequestMapping(name = "添加权限账户",value = "setAuthor")
+    public void addUserPower(){
+
+    }
 }

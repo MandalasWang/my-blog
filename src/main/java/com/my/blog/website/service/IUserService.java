@@ -3,7 +3,7 @@ package com.my.blog.website.service;
 import com.my.blog.website.model.Vo.UserVo;
 
 /**
- * Created by BlueT on 2017/3/3.
+ * @author 博渊
  */
 public interface IUserService {
 
@@ -37,4 +37,11 @@ public interface IUserService {
      * @return
      */
     void updateByUid(UserVo userVo);
+
+    /**
+     * 通过username获取用户信息
+     * @param userName
+     * @return
+     */
+    UserVo getUserInfoByUsername(String userName);
 }

@@ -5,11 +5,13 @@ import com.my.blog.website.constant.WebConst;
 import com.my.blog.website.dto.ErrorCode;
 import com.my.blog.website.dto.MetaDto;
 import com.my.blog.website.dto.Types;
+import com.my.blog.website.enums.JsonData;
 import com.my.blog.website.exception.TipException;
 import com.my.blog.website.model.Bo.ArchiveBo;
 import com.my.blog.website.model.Bo.RestResponseBo;
 import com.my.blog.website.model.Vo.CommentVo;
 import com.my.blog.website.model.Vo.MetaVo;
+import com.my.blog.website.model.Vo.UserVo;
 import com.my.blog.website.service.IMetaService;
 import com.my.blog.website.service.ISiteService;
 import com.my.blog.website.utils.PatternKit;
@@ -21,6 +23,9 @@ import com.my.blog.website.service.ICommentService;
 import com.my.blog.website.service.IContentService;
 import com.my.blog.website.utils.IPKit;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -33,7 +38,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.net.URLEncoder;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 首页
@@ -414,5 +421,19 @@ public class IndexController extends BaseController {
         cookie.setSecure(false);
         response.addCookie(cookie);
     }
+
+
+    @RequestMapping(name = "设置的未登录拦截接口",value = "pub/need_login")
+    public JsonData needLogin(){
+        return JsonData.buildSuccess(-2,"请先登录");
+    }
+
+
+    @RequestMapping(name = "设置登录但未授权的用户拦截接口",value = "pub/need_permission")
+    public JsonData needPermission(){
+        return JsonData.buildSuccess(-3,"您没有权限，请联系管理员！");
+    }
+
+
 
 }

@@ -13,6 +13,6 @@ ${AnsiColor.BRIGHT_YELLOW}
                \______/                                  \______/
 
 ${AnsiColor.BRIGHT_GREEN}
-Project Version: V1.0
+Project Version: V1.1
 Application Version: ${application.version}${application.formatted-version}
 Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
