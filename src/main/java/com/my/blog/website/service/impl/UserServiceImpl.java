@@ -1,9 +1,7 @@
 package com.my.blog.website.service.impl;
 
-import com.my.blog.website.dao.RoleMapper;
 import com.my.blog.website.dao.UserVoMapper;
 import com.my.blog.website.exception.TipException;
-import com.my.blog.website.model.Role;
 import com.my.blog.website.model.Vo.UserVo;
 import com.my.blog.website.service.IUserService;
 import com.my.blog.website.utils.TaleUtils;
@@ -27,8 +25,6 @@ public class UserServiceImpl implements IUserService {
     @Resource
     private UserVoMapper userDao;
 
-    @Autowired
-    private RoleMapper roleMapper;
 
     @Override
     public Integer insertUser(UserVo userVo) {
@@ -84,11 +80,4 @@ public class UserServiceImpl implements IUserService {
     }
 
 
-    @Override
-    public UserVo getUserInfoByUsername(String username){
-        UserVo users = userDao.findByUsername(username);
-        List<Role> roles = roleMapper.getRoleListByUserId(users.getUid());
-        users.setRoleList(roles);
-        return users;
-    }
 }

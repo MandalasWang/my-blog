@@ -38,10 +38,5 @@ public interface IUserService {
      */
     void updateByUid(UserVo userVo);
 
-    /**
-     * 通过username获取用户信息
-     * @param userName
-     * @return
-     */
-    UserVo getUserInfoByUsername(String userName);
+
 }

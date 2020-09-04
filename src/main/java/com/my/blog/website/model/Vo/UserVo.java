@@ -1,7 +1,5 @@
 package com.my.blog.website.model.Vo;
 
-import com.my.blog.website.model.Role;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -58,10 +56,7 @@ public class UserVo implements Serializable {
      * 用户组
      */
     private String groupName;
-    /**
-     * 用户组
-     */
-    private List<Role> roleList;
+
 
     private static final long serialVersionUID = 1L;
 
@@ -145,11 +140,4 @@ public class UserVo implements Serializable {
         this.groupName = groupName;
     }
 
-    public List<Role> getRoleList() {
-        return roleList;
-    }
-
-    public void setRoleList(List<Role> roleList) {
-        this.roleList = roleList;
-    }
 }
