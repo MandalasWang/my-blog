@@ -90,7 +90,7 @@ public class TaleUtils {
         FileOutputStream fos = null;
 
         try {
-            fos = new FileOutputStream("application-dev.properties");
+            fos = new FileOutputStream("application-dev.yml");
             props.setProperty("spring.datasource.url", url);
             props.setProperty("spring.datasource.dbname", dbName);
             props.setProperty("spring.datasource.username", userName);
@@ -184,7 +184,7 @@ public class TaleUtils {
     public static DataSource getNewDataSource() {
         if (newDataSource == null) synchronized (TaleUtils.class) {
             if (newDataSource == null) {
-                Properties properties = TaleUtils.getPropFromFile("application-dev.properties");
+                Properties properties = TaleUtils.getPropFromFile("application-dev.yml");
                 if (properties.size() == 0) {
                     return newDataSource;
                 }
