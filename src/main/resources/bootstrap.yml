@@ -8,7 +8,7 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 127.0.0.1:8848 #文件注册中心地址
+        server-addr: 39.96.21.84:8848 #文件注册中心地址
         file-extension: yaml #文件扩展格式
 
 profiles:
