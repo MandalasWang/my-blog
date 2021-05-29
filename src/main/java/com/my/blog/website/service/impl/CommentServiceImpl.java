@@ -148,8 +148,8 @@ public class CommentServiceImpl implements ICommentService {
         returnBo.setHasPreviousPage(ordinal.isHasPreviousPage());
         returnBo.setIsFirstPage(ordinal.isIsFirstPage());
         returnBo.setIsLastPage(ordinal.isIsLastPage());
-        returnBo.setNavigateFirstPage(ordinal.getNavigateFirstPage());
-        returnBo.setNavigateLastPage(ordinal.getNavigateLastPage());
+        returnBo.setFirstPage(ordinal.getFirstPage());
+        returnBo.setLastPage(ordinal.getLastPage());
         returnBo.setNavigatepageNums(ordinal.getNavigatepageNums());
         returnBo.setSize(ordinal.getSize());
         returnBo.setPrePage(ordinal.getPrePage());

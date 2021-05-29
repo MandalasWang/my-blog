@@ -23,7 +23,6 @@ import java.io.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.Normalizer;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Properties;
 import java.util.regex.Matcher;
@@ -91,7 +90,7 @@ public class TaleUtils {
         FileOutputStream fos = null;
 
         try {
-            fos = new FileOutputStream("application-jdbc.properties");
+            fos = new FileOutputStream("application-dev.properties");
             props.setProperty("spring.datasource.url", url);
             props.setProperty("spring.datasource.dbname", dbName);
             props.setProperty("spring.datasource.username", userName);
@@ -185,7 +184,7 @@ public class TaleUtils {
     public static DataSource getNewDataSource() {
         if (newDataSource == null) synchronized (TaleUtils.class) {
             if (newDataSource == null) {
-                Properties properties = TaleUtils.getPropFromFile("application-jdbc.properties");
+                Properties properties = TaleUtils.getPropFromFile("application-dev.properties");
                 if (properties.size() == 0) {
                     return newDataSource;
                 }
