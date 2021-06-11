@@ -1,6 +1,4 @@
-#端口号
-server:
-  port: 9999
+
 #数据库
 spring:
   application:
@@ -8,8 +6,13 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 39.96.21.84:8848 #文件注册中心地址
+        server-addr: 39.96.21.84:8848 #文件配置中心地址
         file-extension: yaml #文件扩展格式
+      discovery:
+        server-addr: 39.96.21.84:8848 # 服务注册中心地址
+    sentinel:
+      transport:
+        dashboard: 39.96.21.84:8080 #sentinel流控控制面板
 
 profiles:
   active: pro
