@@ -1,6 +1,9 @@
 package com.my.blog.website.utils.backup;
 
 
+/**
+ * @author
+ */
 public class Table {
 	private String name;
 	private ColumnCollection columns;

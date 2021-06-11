@@ -1,6 +1,12 @@
 package com.my.blog.website.dto;
 
+/**
+ * @author
+ */
 public enum Types {
+    /**
+     *
+     */
     TAG("tag"),
     CATEGORY("category"),
     ARTICLE("post"),

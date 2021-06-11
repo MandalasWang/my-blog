@@ -2,7 +2,7 @@ package com.my.blog.website.model.Bo;
 
 /**
  * rest返回对象
- *^
+ * @author
  * @param <T>
  */
 public class RestResponseBo<T> {

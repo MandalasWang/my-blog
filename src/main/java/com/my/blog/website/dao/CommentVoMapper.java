@@ -7,6 +7,9 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author
+ */
 @Component
 public interface CommentVoMapper {
     long countByExample(CommentVoExample example);

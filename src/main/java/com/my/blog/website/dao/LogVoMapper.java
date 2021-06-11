@@ -6,6 +6,9 @@ import java.util.List;
 import io.lettuce.core.dynamic.annotation.Param;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author
+ */
 @Component
 public interface LogVoMapper {
     long countByExample(LogVoExample example);

@@ -8,6 +8,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springfox.documentation.oas.annotations.EnableOpenApi;
 
+/**
+ * @author
+ */
 @EnableDiscoveryClient
 @EnableOpenApi
 @MapperScan("com.my.blog.website.dao")

@@ -2,6 +2,9 @@ package com.my.blog.website.utils.backup;
 
 import java.util.ArrayList;
 
+/**
+ * @author
+ */
 public class TableCollection extends ArrayList<Table> {
 
 	/**

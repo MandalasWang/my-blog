@@ -1,5 +1,8 @@
 package com.my.blog.website.utils.backup.db;
 
+/**
+ * @author
+ */
 public class Column {
 	private String catalogName;
 	private String schemaName;

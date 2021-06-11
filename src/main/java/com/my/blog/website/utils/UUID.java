@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
+ * @author
  * 封装UUID
  */
 public abstract class UUID {
@@ -24,8 +25,8 @@ public abstract class UUID {
         return r.nextInt(max - min + 1) + min;
     }
 
-    private static final char[] _UU64 = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz".toCharArray();
-    private static final char[] _UU32 = "0123456789abcdefghijklmnopqrstuv".toCharArray();
+    private static final char[] UU64 = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz".toCharArray();
+    private static final char[] UU32 = "0123456789abcdefghijklmnopqrstuv".toCharArray();
 
     /**
      * @return 64进制表示的紧凑格式的 UUID
@@ -65,18 +66,18 @@ public abstract class UUID {
         // 从L64位取10次，每次取6位
         for (int off = 58; off >= 4; off -= 6) {
             long hex = (L & (mask << off)) >>> off;
-            cs[index++] = _UU64[(int) hex];
+            cs[index++] = UU64[(int) hex];
         }
         // 从L64位取最后的4位 ＋ R64位头2位拼上
         int l = (int) (((L & 0xF) << 2) | ((R & (3 << 62)) >>> 62));
-        cs[index++] = _UU64[l];
+        cs[index++] = UU64[l];
         // 从R64位取10次，每次取6位
         for (int off = 56; off >= 2; off -= 6) {
             long hex = (R & (mask << off)) >>> off;
-            cs[index++] = _UU64[(int) hex];
+            cs[index++] = UU64[(int) hex];
         }
         // 剩下的两位最后取
-        cs[index++] = _UU64[(int) (R & 3)];
+        cs[index++] = UU64[(int) (R & 3)];
         // 返回字符串
         return new String(cs);
     }
@@ -98,10 +99,10 @@ public abstract class UUID {
         long m = uu.getMostSignificantBits();
         long l = uu.getLeastSignificantBits();
         for (int i = 0; i < 13; i++) {
-            sb.append(_UU32[(int) (m >> ((13 - i - 1) * 5)) & 31]);
+            sb.append(UU32[(int) (m >> ((13 - i - 1) * 5)) & 31]);
         }
         for (int i = 0; i < 13; i++) {
-            sb.append(_UU32[(int) (l >> ((13 - i - 1)) * 5) & 31]);
+            sb.append(UU32[(int) (l >> ((13 - i - 1)) * 5) & 31]);
         }
         return sb.toString();
     }
@@ -142,7 +143,7 @@ public abstract class UUID {
         return sb.toString();
     }
 
-    private static final char[] _UU16 = "0123456789abcdef".toCharArray();
+    private static final char[] UU16 = "0123456789abcdef".toCharArray();
 
     /**
      * 将一个 UU64 表示的紧凑字符串，变成 UU16 表示的字符串
@@ -163,8 +164,8 @@ public abstract class UUID {
             int off = i * 2;
             char cl = cs[off];
             char cr = cs[off + 1];
-            int l = Arrays.binarySearch(_UU64, cl);
-            int r = Arrays.binarySearch(_UU64, cr);
+            int l = Arrays.binarySearch(UU64, cl);
+            int r = Arrays.binarySearch(UU64, cr);
             int n = (l << 6) | r;
             bytes[index++] = (byte) ((n & 0xF00) >>> 8);
             bytes[index++] = (byte) ((n & 0xF0) >>> 4);
@@ -173,8 +174,8 @@ public abstract class UUID {
         // 最后一次，是用最后2个字符，恢复回2个byte
         char cl = cs[20];
         char cr = cs[21];
-        int l = Arrays.binarySearch(_UU64, cl);
-        int r = Arrays.binarySearch(_UU64, cr);
+        int l = Arrays.binarySearch(UU64, cl);
+        int r = Arrays.binarySearch(UU64, cr);
         int n = (l << 2) | r;
         bytes[index++] = (byte) ((n & 0xF0) >>> 4);
         bytes[index++] = (byte) (n & 0xF);
@@ -182,7 +183,7 @@ public abstract class UUID {
         // 返回 UUID 对象
         char[] names = new char[32];
         for (int i = 0; i < bytes.length; i++)
-            names[i] = _UU16[bytes[i]];
+        {names[i] = UU16[bytes[i]];}
         return new String(names);
     }
 
@@ -227,6 +228,7 @@ public abstract class UUID {
                 data = randdata.nextInt(26) + 65;// 保证只会产生ASCII为65~90(A~Z)之间的整数
                 sb.append((char) data);
                 break;
+                default:
             }
         }
         return sb.toString();

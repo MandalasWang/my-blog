@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.my.blog.website.model.Vo.AttachVo;
 
 /**
+ * @author
  * Created by wangq on 2017/3/20.
  */
 public interface IAttachService {

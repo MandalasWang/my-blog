@@ -2,6 +2,9 @@ package com.my.blog.website.dto;
 
 import com.my.blog.website.model.Vo.MetaVo;
 
+/**
+ * @author
+ */
 public class MetaDto extends MetaVo {
 
     private int count;

@@ -5,6 +5,7 @@ import com.my.blog.website.model.Vo.ContentVoExample;
 import com.my.blog.website.model.Vo.ContentVo;
 
 /**
+ * @author
  * Created by Administrator on 2017/3/13 013.
  */
 public interface IContentService {

@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
+ * @author
  * Created by Administrator on 2017/3/10 010.
  */
 public class DateKit {
@@ -267,6 +268,8 @@ public class DateKit {
                 break;
             case 7:
                 time += (long)n;
+                break;
+            default:
         }
 
         Date result = new Date();
@@ -310,6 +313,8 @@ public class DateKit {
                     break;
                 case 7:
                     result = intervalTime / 1L;
+                    break;
+                default:
             }
 
             if(tmp > 0L) {

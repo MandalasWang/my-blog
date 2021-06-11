@@ -1,5 +1,8 @@
 package com.my.blog.website.exception;
 
+/**
+ * @author
+ */
 public class TipException extends RuntimeException {
 
     public TipException() {

@@ -3,6 +3,7 @@ package com.my.blog.website.model.Bo;
 import java.io.Serializable;
 
 /**
+ * @author
  * 后台统计对象
  */
 public class StatisticsBo implements Serializable {

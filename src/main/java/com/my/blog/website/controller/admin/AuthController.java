@@ -102,7 +102,6 @@ public class AuthController extends BaseController {
         cookie.setMaxAge(0);
         response.addCookie(cookie);
         try {
-            //response.sendRedirect(Commons.site_url());
             response.sendRedirect(Commons.site_login());
         } catch (IOException e) {
             e.printStackTrace();

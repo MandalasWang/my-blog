@@ -13,6 +13,7 @@ import java.nio.channels.FileChannel;
 import java.util.Random;
 
 /**
+ * @author
  * 工具类
  * Created by BlueT on 2017/3/9.
  */
@@ -76,8 +77,6 @@ public class Tools {
      * @return
      */
     public static boolean isNumber(String str) {
-        // Pattern pattern=Pattern.compile("[0-9]*");
-        // return pattern.matcher(str).matches();
         if (null != str && 0 != str.trim().length() && str.matches("\\d*")) {
             return true;
         }

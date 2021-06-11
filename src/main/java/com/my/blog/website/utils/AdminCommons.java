@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
 /**
+ * @author
  * 后台公共函数
  * <p>
  * Created by 13 on 2017/2/21.

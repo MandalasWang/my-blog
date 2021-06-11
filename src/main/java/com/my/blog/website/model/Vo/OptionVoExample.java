@@ -3,6 +3,9 @@ package com.my.blog.website.model.Vo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author
+ */
 public class OptionVoExample {
     protected String orderByClause;
 
